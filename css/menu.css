@@ -1,0 +1,214 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #252525;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #3b141c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header i{
+    color: #fff;
+}
+
+header .logo h1 {
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+}
+
+header nav{
+    margin-right: 20px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: #fff;
+    margin: 0 15px;
+    padding: 10px 15px; 
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 40px;
+}
+
+header nav ul li a:hover {
+    background-color: #f3961c;
+    color: #3b141c;
+}
+
+/* ===== HAMBURGUESA ===== */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon{
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: auto;
+}
+
+/* ===== SECCIÓN INICIO ===== */
+.inicio{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    padding-top: 100px;  /* espacio por header fijo */
+    box-sizing: border-box;
+    text-align: center;  
+}
+
+.inicio .titulo{
+    color: #fff;
+    font-size: 40px;
+}
+
+.inicio .linea {
+    width: 120px;
+    height: 10px;
+    background-color: #f3961c;
+    margin: -20px auto 40px;
+    border-radius: 50px;
+}
+
+.inicio .cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.inicio .imagen{
+    margin-top: 20px;
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+.inicio .imagen:hover{
+    background: linear-gradient(95deg,#3b141c,#a82222);
+    transform: scale(1.1);
+    border-radius: 50px;
+    padding: 20px 15px;
+}
+
+.inicio .imagen img {
+    max-height: 250px;  
+    width: 100%;
+    object-fit: contain; 
+    margin-bottom: 15px;
+}
+
+.inicio .contenido h3{
+    color: #fff;
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.inicio .contenido p{
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.inicio .contenido .comprar,
+.inicio .contenido .Mas-detalles{
+    background-color:#f3961c;
+    border: none;
+    color: #252525;
+    box-shadow: 0px 4px 10px rgba(95, 94, 94, 0.479);
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.inicio .contenido .comprar:hover,
+.inicio .contenido .Mas-detalles:hover{
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px){
+    .inicio .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .inicio .titulo{
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px){
+    /* Mostrar ícono hamburguesa */
+    .menu-icon{
+        display: block;
+    }
+    .menu-icon{
+        margin-right: 20px;
+    }
+
+    /* Nav oculto por defecto */
+    header nav {
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.9);
+        width: 220px;
+        padding: 15px 0;
+        border-radius: 10px;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Mostrar menú cuando se active el toggle */
+    #menu-toggle:checked ~ .nav {
+        display: flex;
+    }
+
+    .inicio .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

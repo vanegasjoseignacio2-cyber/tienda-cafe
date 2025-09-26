@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background:linear-gradient(#fff 65%,#8d8b8b);
+}
+
+header {
+    background-color: #3b141c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+header i{
+    color: #fff;
+
+}
+
+header .logo h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+}
+header nav{
+    margin-right: 20px;
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    margin: 0 15px;
+    padding: 10px 15px; 
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 40px;
+    font-family: Arial, Helvetica, sans-serif;}
+
+header nav ul li a:hover {
+    background-color: #f3961c;
+    color: #3b141c;
+    padding: 8px 13px;
+}
+/* ===== HAMBURGUESA ===== */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon{
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: auto;
+}
+.inicio{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    padding-top: 60px;    
+    box-sizing: border-box;
+    font-size: 30px;
+}
+.inicio .cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.inicio .titulo{
+    color: #040404;
+    text-align: center;
+    font-size: 40px;
+}
+.inicio .linea {
+    width: 120px;
+    height: 10px;
+    background-color: #f3961c;
+    margin:-20px auto 40px;
+    border-radius: 50px;
+
+}
+.inicio .imagen{
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.inicio .imagen img {
+    max-height: 230px;  
+    height: 230px;
+    width: 350px;
+    border-radius: 8px
+}
+@media (max-width: 991px){
+    .inicio .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .inicio .titulo{
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px){
+    /* Mostrar ícono hamburguesa */
+    .menu-icon{
+        display: block;
+    }
+
+    /* Nav oculto por defecto */
+    header nav {
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.558);
+        width: 220px;
+        padding: 15px 0;
+        border-radius: 10px;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu-icon{
+        margin-right: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Mostrar menú cuando se active el toggle */
+    #menu-toggle:checked ~ .nav {
+        display: flex;
+    }
+
+    .inicio .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

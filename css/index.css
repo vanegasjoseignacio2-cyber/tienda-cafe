@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Righteous&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #3b141c ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #3b141c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .logo h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    margin: 0 15px;
+    padding: 10px 15px; 
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 40px;
+}
+
+header nav ul li a:hover {
+    background-color: #f3961c;
+    color: #3b141c;
+}
+
+/* ===== HAMBURGUESA ===== */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon{
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: auto;
+}
+
+/* ===== SECCIÓN INICIO ===== */
+.inicio{
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding-top: 90px; /* espacio por header fijo */
+    box-sizing: border-box;
+    font-size: 30px;
+}
+
+.inicio .contenedor h2{
+    font-family: 'Miniver',sans-serif;
+    color: #f3961c;
+}
+.inicio .contenedor h1{
+    color: #fff;
+}
+.inicio .contenedor p{
+    color: #fff;
+    font-size: 20px;
+}
+.inicio .imagen img{
+    width: 650px;
+    height: auto; 
+    max-width: 100%;
+}
+
+.inicio .contenedor .btn{
+    background-color: #f3961c;
+    color: #3b141c;
+    border: none;
+    border-radius: 50px;
+    padding: 9px 15px;
+    margin: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+}
+.inicio .contenedor .btn:hover{
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px){
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .inicio .contenedor{
+        max-width: 600px;
+    }
+
+    .inicio .imagen img{
+        width: 100%;
+        max-width: 450px;
+        margin-top: 20px;
+    }
+
+    .inicio .contenedor h2{
+        font-size: 1.8rem;
+    }
+
+    .inicio .contenedor h1{
+        font-size:1.8rem;
+        text-align: center;
+    }
+
+    .inicio .contenedor p{
+        font-size:1rem;
+    }
+    .inicio .contenedor .btn{
+        font-size: 1rem;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 768px){
+    .menu-icon{
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.553);
+        width: 200px;
+        padding: 10px 0;
+        margin-right: 25px;
+        border-radius: 10px;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu-icon{
+        margin-right: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+    header nav ul li a {
+        color: rgb(255, 255, 255);
+    }
+
+    /* cuando el menú esté activo */
+    #menu-toggle:checked ~ .nav {
+        display: flex;
+    }
+}
