@@ -155,7 +155,7 @@ header nav ul li a:hover {
         position: absolute;
         top: 40px;
         right: 20px;
-        background: rgba(0, 0, 0, 0.553);
+        background: black;
         width: 200px;
         padding: 10px 0;
         margin-right: 25px;
@@ -163,9 +163,6 @@ header nav ul li a:hover {
         display: none;
         flex-direction: column;
         text-align: center;
-    }
-    .menu-icon{
-        margin-right: 20px;
     }
 
     header nav ul {
