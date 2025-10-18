@@ -149,6 +149,7 @@ header nav ul li a:hover {
 @media (max-width: 768px){
     .menu-icon{
         display: block;
+        margin-right: 20px;
     }
 
     header nav {
